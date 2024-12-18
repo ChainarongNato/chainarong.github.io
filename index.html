@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Landing Page</title>
+    <title>Fantasy Character Info</title>
     <style>
         body, html {
             margin: 0;
@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100%;
+            height: 50%;
             color: #fff;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             text-align: center;
@@ -49,28 +49,47 @@
             animation: fadeIn 3s ease-in-out;
         }
 
-        /* ปุ่ม */
-        .buttons {
-            display: flex;
-            gap: 20px;
-            animation: fadeIn 4s ease-in-out;
-        }
-
-        .button {
-            padding: 15px 30px;
+        /* กล่องข้อมูลตัวละคร */
+        .character-info {
+            background: rgba(0, 0, 0, 0.6);
             border: 2px solid #fff;
-            border-radius: 30px;
+            border-radius: 15px;
+            padding: 20px;
+            width: 80%;
+            max-width: 900px;
             color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            color: #000;
+        .character-info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .character-details {
+            flex: 1;
+        }
+
+        .character-name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .character-stars {
+            margin-bottom: 10px;
+            color: gold;
+            font-size: 1.2rem;
+        }
+
+        .character-description {
+            line-height: 1.5;
         }
 
         @keyframes fadeIn {
@@ -88,11 +107,21 @@
 <body>
     <div class="background"></div>
     <div class="content">
-        <h1 class="title">A New Adventure Begins</h1>
-        <p class="subtitle">Explore the World of Fantasy</p>
-        <div class="buttons">
-            <a href="#" class="button">Start Journey</a>
-            <a href="#" class="button">Learn More</a>
+        <h1 class="title">PROFILO</h1>
+        <p class="subtitle">WELCOME</p>
+    </div>
+
+    <!-- กล่องข้อมูลตัวละคร -->
+    <div class="character-info">
+        <img src="img/img01.jpg" alt="Character Image">
+        <div class="character-details">
+            <h2 class="character-name">Sunday</h2>
+            <p class="character-stars">★★★★★ ตัวละคร 5 ดาว</p>
+            <p class="character-description">
+                ย่อมมีสรรพสิ่งลึกลับที่ต้องการความสร้างสรรค์ 
+                อาศัยพลังแห่งดวงดาวช่วยปลุกพลังแสงสว่างในตัวตน 
+                พร้อมเสียง VA: Griffin Puatu
+            </p>
         </div>
     </div>
 </body>
