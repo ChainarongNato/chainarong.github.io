@@ -3,263 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Landing Page</title>
+    <title>โปรไฟล์ผู้ใช้</title>
+
+    <!-- Adding Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Kanit:wght@300;400;700&display=swap" rel="stylesheet">
+
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Kanit', sans-serif;
+            background: linear-gradient(135deg, #1b3e63, #2c75b5, #a3d8f4);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.3s ease;
         }
 
-        /* พื้นหลังเต็มจอ */
-        .background {
-            background: url('fantasy-bg.jpg') no-repeat center center/cover;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        /* กล่องเนื้อหา */
-        .content {
+        .profile-container {
+            background: rgba(0, 0, 0, 0.85);
+            border: 2px solid #6ca0dc;
+            border-radius: 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100%;
-            color: #fff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             text-align: center;
-        }
-
-        .title {
-            font-size: 3rem;
-            margin: 10px 0;
-            font-weight: bold;
-            text-transform: uppercase;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        /* ปุ่ม */
-        .buttons {
-            display: flex;
-            gap: 20px;
-            animation: fadeIn 4s ease-in-out;
-        }
-
-        .button {
-            padding: 15px 30px;
-            border: 2px solid #fff;
-            border-radius: 30px;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 1rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .button:hover {
-            background: rgba(255, 255, 255, 0.3);
-            color: #000;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Slider Section */
-        .character-slider {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px 0;
-        }
-
-        .slider-container {
-            display: flex;
-            transition: transform 0.3s ease-in-out;
-            gap: 20px;
-        }
-
-        .character-card {
-            background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            flex: 0 0 80%;
-            max-width: 800px;
-        }
-
-        .character-header {
-            background: linear-gradient(135deg, #6b4ce6, #d78aff);
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .character-header h2 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
-
-        .character-header p {
-            margin: 0;
-            font-size: 1rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .character-content {
-            display: flex;
-            gap: 15px;
             padding: 20px;
-            align-items: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 600px;
+            transform: translateY(-100px);
+            animation: slideIn 0.5s ease-out forwards;
         }
 
-        .character-image img {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
+        /* รูปโปรไฟล์ */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 6px solid #6ca0dc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             object-fit: cover;
-            border: 3px solid #d78aff;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
 
-        .character-details {
-            flex: 1;
-            color: #333;
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
-        .character-details p {
-            margin: 5px 0;
+        h2, h3 {
+            color: #9cc2e6;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .info {
+            font-size: 18px;
             line-height: 1.6;
+            font-weight: 400;
         }
 
-        /* Slider Buttons */
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+        .info span {
+            font-weight: bold;
+            color: #b6e3ff;
+        }
+
+        .invite-btn {
+            background: #36a9e1;
             color: #fff;
             border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 1.5rem;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            text-transform: uppercase;
             cursor: pointer;
-            z-index: 2;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
         }
 
-        .slider-btn:hover {
-            background: rgba(255, 255, 255, 0.8);
-            color: #000;
+        .invite-btn:hover {
+            background: #2c8ac2;
+            transform: translateY(-3px);
         }
 
-        .prev-btn {
-            left: 10px;
+        .invite-btn:active {
+            transform: translateY(3px);
         }
 
-        .next-btn {
-            right: 10px;
+        /* Section ความชอบ */
+        .interest-section {
+            margin-top: 20px;
+            background: rgba(25, 47, 79, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease;
         }
+
+        .interest-section:hover {
+            background: rgba(25, 47, 79, 1);
+        }
+
+        .bottom-banner {
+            margin-top: 20px;
+            background: #6ca0dc;
+            border-radius: 8px;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #fff;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease;
+        }
+
+        .bottom-banner:hover {
+            background: #5b8ca1;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="content">
-        <h1 class="title">PROFILO</h1>
-        <p class="subtitle">WELCOME</p>
-    </div>
+    <div class="profile-container">
+        <!-- รูปโปรไฟล์ตรงกลาง -->
+        <img src="img01.jpg" alt="Profile" class="profile-img">
 
-    <!-- Slider Section -->
-    <div class="character-slider">
-        <div class="slider-container">
-            <div class="character-card">
-                <div class="character-header">
-                    <h2>Sunday</h2>
-                    <p>★★★★★ ตัวละคร 5 ดาว</p>
-                </div>
-                <div class="character-content">
-                    <div class="character-image">
-                        <img src="character-image.jpg" alt="Sunday">
-                    </div>
-                    <div class="character-details">
-                        <p><b>VA:</b> Griffin Puatu</p>
-                        <p>
-                            ย่อมมีสรรพสิ่งลึกลับที่ต้องการความสร้างสรรค์ อาศัยพลังแห่งดวงดาวช่วยปลุกพลังแสงสว่างในตัวตน
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="character-card">
-                <div class="character-header">
-                    <h2>Monday</h2>
-                    <p>★★★★ ตัวละคร 4 ดาว</p>
-                </div>
-                <div class="character-content">
-                    <div class="character-image">
-                        <img src="character-image2.jpg" alt="Monday">
-                    </div>
-                    <div class="character-details">
-                        <p><b>VA:</b> Sarah Williams</p>
-                        <p>
-                            ความมุ่งมั่นและความหวังเป็นสิ่งที่เธอยึดถือ อาศัยพลังธรรมชาติช่วยเพิ่มความแข็งแกร่งในทุก ๆ วัน
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!-- ข้อมูลโปรไฟล์ -->
+        <h2>โปรไฟล์ผู้ใช้</h2>
+        <div class="info"><span>ชื่อ:</span> ชัยณรงค์ ไกรกิจราษฏร์</div>
+        <div class="info"><span>ชื่อเล่น:</span> น้อย</div>
+        <div class="info"><span>รหัสนักศึกษา:</span> 66309010038</div>
+        <div class="info"><span>ห้อง:</span> IT.5101</div>
+        <div class="info"><span>ที่อยู่:</span> 138/105 เชียงใหม่</div>
+        <div class="info"><span>เบอร์โทร:</span> 099-xxx-xxxx</div>
+        <button class="invite-btn">แก้ไข</button>
+
+        <!-- Section ความชอบ -->
+        <div class="interest-section">
+            <h3>ความชอบ</h3>
+            <div class="info"><span>งานอดิเรก:</span> เล่นเกม, วาดรูป, ดูอนิเมะ</div>
         </div>
-        <button class="slider-btn prev-btn">❮</button>
-        <button class="slider-btn next-btn">❯</button>
+
+        <!-- แบนเนอร์ด้านล่าง -->
+        <div class="bottom-banner">
+            ขอบคุณที่เข้ามาดูโปรไฟล์ของฉัน!
+        </div>
     </div>
-
-    <script>
-        // JavaScript for Slider Functionality
-        const sliderContainer = document.querySelector('.slider-container');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-
-        let currentSlide = 0;
-
-        function updateSlider() {
-            const cardWidth = document.querySelector('.character-card').offsetWidth;
-            const gap = 20; // Same as gap in CSS
-            const offset = currentSlide * (cardWidth + gap);
-            sliderContainer.style.transform = `translateX(-${offset}px)`;
-        }
-
-        prevBtn.addEventListener('click', () => {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlider();
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            const maxSlides = sliderContainer.children.length;
-            if (currentSlide < maxSlides - 1) {
-                currentSlide++;
-                updateSlider();
-            }
-        });
-    </script>
 </body>
 </html>
