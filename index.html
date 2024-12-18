@@ -3,15 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #e74c3c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .info div {
+            width: 48%;
+        }
+
+        .info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            background-color: #e74c3c;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1># chainarong.github.io</h1>
+    <header>
+        <h1>About Me</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Skills</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-    <h3># Chainarong Kraikitrat</h3>
-    <h3># Noi</h3>
-    <h3># number 24.</h3>
-    <h3># IT.5101</h3>
-    <h3># ID Students 66309010038</h3>
+    <div class="container">
+        <div class="about-header">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+            <h2>John Doe</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut semper nulla.</p>
+        </div>
+
+        <div class="info">
+            <div>
+                <h3>Personal Info</h3>
+                <p><strong>Full Name:</strong> John Doe</p>
+                <p><strong>Birthday:</strong> 7 Feb, 1980</p>
+                <p><strong>Birth Place:</strong> Melbourne, Australia</p>
+                <p><strong>Hobbies:</strong> Art, Reading, Movies</p>
+            </div>
+
+            <div>
+                <h3>Contact Info</h3>
+                <p><strong>Address:</strong> Melbourne, Australia</p>
+                <p><strong>Phone:</strong> +123-456-7890</p>
+                <p><strong>Email:</strong> john@johndoe.com</p>
+                <p><strong>Website:</strong> www.johndoe.com</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 John Doe. All rights reserved.
+    </footer>
 </body>
 </html>
