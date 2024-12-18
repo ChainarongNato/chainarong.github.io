@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Character Info</title>
+    <title>Fantasy Landing Page</title>
     <style>
         body, html {
             margin: 0;
@@ -29,7 +29,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 50%;
+            height: 100%;
             color: #fff;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
             text-align: center;
@@ -49,47 +49,28 @@
             animation: fadeIn 3s ease-in-out;
         }
 
-        /* กล่องข้อมูลตัวละคร */
-        .character-info {
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px solid #fff;
-            border-radius: 15px;
-            padding: 20px;
-            width: 80%;
-            max-width: 900px;
-            color: #fff;
-            margin: 20px auto;
-            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        /* ปุ่ม */
+        .buttons {
             display: flex;
-            align-items: center;
             gap: 20px;
+            animation: fadeIn 4s ease-in-out;
         }
 
-        .character-info img {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-            object-fit: cover;
+        .button {
+            padding: 15px 30px;
+            border: 2px solid #fff;
+            border-radius: 30px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .character-details {
-            flex: 1;
-        }
-
-        .character-name {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .character-stars {
-            margin-bottom: 10px;
-            color: gold;
-            font-size: 1.2rem;
-        }
-
-        .character-description {
-            line-height: 1.5;
+        .button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: #000;
         }
 
         @keyframes fadeIn {
@@ -102,6 +83,103 @@
                 transform: translateY(0);
             }
         }
+
+        /* Slider Section */
+        .character-slider {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 0;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+            gap: 20px;
+        }
+
+        .character-card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            flex: 0 0 80%;
+            max-width: 800px;
+        }
+
+        .character-header {
+            background: linear-gradient(135deg, #6b4ce6, #d78aff);
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .character-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .character-header p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .character-content {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .character-image img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 3px solid #d78aff;
+        }
+
+        .character-details {
+            flex: 1;
+            color: #333;
+        }
+
+        .character-details p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        /* Slider Buttons */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .slider-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            color: #000;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -111,18 +189,77 @@
         <p class="subtitle">WELCOME</p>
     </div>
 
-    <!-- กล่องข้อมูลตัวละคร -->
-    <div class="character-info">
-        <img src="img/img01.jpg" alt="Character Image">
-        <div class="character-details">
-            <h2 class="character-name">Sunday</h2>
-            <p class="character-stars">★★★★★ ตัวละคร 5 ดาว</p>
-            <p class="character-description">
-                ย่อมมีสรรพสิ่งลึกลับที่ต้องการความสร้างสรรค์ 
-                อาศัยพลังแห่งดวงดาวช่วยปลุกพลังแสงสว่างในตัวตน 
-                พร้อมเสียง VA: Griffin Puatu
-            </p>
+    <!-- Slider Section -->
+    <div class="character-slider">
+        <div class="slider-container">
+            <div class="character-card">
+                <div class="character-header">
+                    <h2>Sunday</h2>
+                    <p>★★★★★ ตัวละคร 5 ดาว</p>
+                </div>
+                <div class="character-content">
+                    <div class="character-image">
+                        <img src="character-image.jpg" alt="Sunday">
+                    </div>
+                    <div class="character-details">
+                        <p><b>VA:</b> Griffin Puatu</p>
+                        <p>
+                            ย่อมมีสรรพสิ่งลึกลับที่ต้องการความสร้างสรรค์ อาศัยพลังแห่งดวงดาวช่วยปลุกพลังแสงสว่างในตัวตน
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="character-card">
+                <div class="character-header">
+                    <h2>Monday</h2>
+                    <p>★★★★ ตัวละคร 4 ดาว</p>
+                </div>
+                <div class="character-content">
+                    <div class="character-image">
+                        <img src="character-image2.jpg" alt="Monday">
+                    </div>
+                    <div class="character-details">
+                        <p><b>VA:</b> Sarah Williams</p>
+                        <p>
+                            ความมุ่งมั่นและความหวังเป็นสิ่งที่เธอยึดถือ อาศัยพลังธรรมชาติช่วยเพิ่มความแข็งแกร่งในทุก ๆ วัน
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+        <button class="slider-btn prev-btn">❮</button>
+        <button class="slider-btn next-btn">❯</button>
     </div>
+
+    <script>
+        // JavaScript for Slider Functionality
+        const sliderContainer = document.querySelector('.slider-container');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentSlide = 0;
+
+        function updateSlider() {
+            const cardWidth = document.querySelector('.character-card').offsetWidth;
+            const gap = 20; // Same as gap in CSS
+            const offset = currentSlide * (cardWidth + gap);
+            sliderContainer.style.transform = `translateX(-${offset}px)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlider();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxSlides = sliderContainer.children.length;
+            if (currentSlide < maxSlides - 1) {
+                currentSlide++;
+                updateSlider();
+            }
+        });
+    </script>
 </body>
 </html>
